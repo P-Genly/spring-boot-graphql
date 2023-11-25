@@ -25,16 +25,16 @@ spring.graphql.graphiql.path=/graphiql
 The directives is annotation to handle `GraphQL` data responses. You can define a custom directive to apply a specific behavior.
 
 ### Step 1 - Create and apply you're directive :
-You juste need to declare you're directives in `graphqls` file :
+At first, you need to declare you're directives in `graphqls` file :
 ```graphqls
-directive @<customName>(<argument>: <type>!) on FIELD_DEFINITION
+directive @<customNameDirective>(<argument>: <type>!) on FIELD_DEFINITION
 ```
 Example : 
 
 ```graphqls
 directive @caseFormat(style: CaseFormat!) on FIELD_DEFINITION
 ```
-After the previous step you can apply you're directive on fields like this :
+After the previous step, apply you're directive on you're fields like this :
 ```graphqls
 type Author {
     id: ID
@@ -43,10 +43,10 @@ type Author {
 }
 ```
 
-### Step 2 - Create behavior of directive :
+### Step 2 - Create behavior for the directive :
 ```java
-@DgsDirective(name = "customDirective")
-public class CustomDirective implements SchemaDirectiveWiring {
+@DgsDirective(name = "customNameDirective")
+public class CustomNameDirective implements SchemaDirectiveWiring {
 
     @Override
     public GraphQLFieldDefinition onField(SchemaDirectiveWiringEnvironment<GraphQLFieldDefinition> env) {
@@ -74,7 +74,7 @@ This bean is mandatory to map you're directive behavior with you're graphQL sche
 @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return builder ->  {
-            builder.directive(<NAME_OF_DIRECTIVE>, new CaseFormatDirective());
+            builder.directive("customNameDirective", new CaseFormatDirective());
         };
     }
 ```
