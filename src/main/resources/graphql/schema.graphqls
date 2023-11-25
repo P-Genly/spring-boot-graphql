@@ -1,0 +1,26 @@
+directive @caseFormat(style: Case!) on FIELD_DEFINITION
+
+type Query {
+    book(id: ID): Book
+    books: [Book]
+    author(id: ID): Author
+    authors: [Author]
+}
+
+type Book {
+    id: ID
+    title: String @caseFormat(style: LOWER_CASE)
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    lastName: String @caseFormat(style: UPPER_CASE)
+    firstName: String @caseFormat(style: UPPER_CASE)
+}
+
+enum Case {
+    UPPER_CASE
+    LOWER_CASE
+}

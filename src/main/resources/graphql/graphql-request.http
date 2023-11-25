@@ -1,0 +1,15 @@
+GRAPHQL http://localhost:8080/graphql
+
+query Books {
+    books {
+        id
+        title
+        pageCount
+        author {
+            id
+            lastName
+            firstName
+        }
+    }
+}
+###
