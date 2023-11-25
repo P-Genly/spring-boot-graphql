@@ -3,7 +3,7 @@
 ## Description
 This project is a sample to learn how to use GraphQL in Spring boot project
 
-## What is used dependency of graphQL ?
+## What is used dependency of GraphQL ?
 In this project we use  `spring-boot-starter-graphql`  dependency
 
 ```xml
@@ -20,7 +20,7 @@ spring.graphql.graphiql.enabled=true
 spring.graphql.graphiql.path=/graphiql
 ```
 
-## Learn to use directive in GraphQL
+## Learn to use directives in GraphQL
 ### What is directives ?
 The directives is annotation to handle `GraphQL` data responses. You can define a custom directive to apply a specific behavior.
 
