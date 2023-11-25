@@ -16,6 +16,5 @@ public class Constant {
 
     /* Actions */
     public static final String UPPER_CASE = "UPPER_CASE";
-    public static final String LOWER_CASE = "LOWER_CASE";
     /* Actions */
 }

@@ -1,4 +1,4 @@
-directive @caseFormat(style: Case!) on FIELD_DEFINITION
+directive @caseFormat(style: CaseFormat!) on FIELD_DEFINITION
 
 type Query {
     book(id: ID): Book
@@ -20,7 +20,7 @@ type Author {
     firstName: String @caseFormat(style: UPPER_CASE)
 }
 
-enum Case {
+enum CaseFormat {
     UPPER_CASE
     LOWER_CASE
 }
