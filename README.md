@@ -78,3 +78,18 @@ This bean is mandatory to map you're directive behavior with you're graphQL sche
         };
     }
 ```
+
+### To know about GraphQL `introspection`
+When you running you're project, by default GraphQL allow introspection for display graphql's schemas.
+It's possible to disable it like this : 
+```java
+@Bean
+    public RuntimeWiringConfigurer runtimeWiringConfigurer() {
+        return builder ->  {
+            ...
+            // Disable GraphQL introspection
+            builder.fieldVisibility(NoIntrospectionGraphqlFieldVisibility.NO_INTROSPECTION_FIELD_VISIBILITY);
+        };
+    }
+```
+_*RuntimeWiringConfigurer `@Bean` is used to define the context in which the application starts_
