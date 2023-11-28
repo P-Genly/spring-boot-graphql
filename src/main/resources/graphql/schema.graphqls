@@ -1,4 +1,5 @@
 directive @caseFormat(style: CaseFormat!) on FIELD_DEFINITION
+directive @authOnly on FIELD_DEFINITION
 
 type Query {
     book(id: ID): Book
@@ -8,14 +9,14 @@ type Query {
 }
 
 type Book {
-    id: ID
+    id: ID @authOnly
     title: String @caseFormat(style: LOWER_CASE)
     pageCount: Int
     author: Author
 }
 
 type Author {
-    id: ID
+    id: ID @authOnly
     lastName: String @caseFormat(style: UPPER_CASE)
     firstName: String @caseFormat(style: UPPER_CASE)
 }
@@ -23,4 +24,9 @@ type Author {
 enum CaseFormat {
     UPPER_CASE
     LOWER_CASE
+}
+
+enum Role {
+    ADMIN,
+    USER
 }

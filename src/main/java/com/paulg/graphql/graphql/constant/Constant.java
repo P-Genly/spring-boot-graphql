@@ -8,6 +8,7 @@ public class Constant {
 
     /* Directives */
     public static final String CASE_FORMAT = "caseFormat";
+    public static final String AUTH = "authOnly";
     /* Directives */
 
     /* Arguments */
@@ -16,5 +17,6 @@ public class Constant {
 
     /* Actions */
     public static final String UPPER_CASE = "UPPER_CASE";
+    public static final String ADMIN = "ADMIN";
     /* Actions */
 }
