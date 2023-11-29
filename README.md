@@ -83,7 +83,7 @@ This bean is mandatory to map you're directive behavior with you're graphQL sche
 When you running you're project, by default GraphQL allow introspection for display graphql's schemas.
 It's possible to disable it like this : 
 ```java
-@Bean
+    @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return builder ->  {
             ...
@@ -92,4 +92,4 @@ It's possible to disable it like this :
         };
     }
 ```
-_*RuntimeWiringConfigurer `@Bean` is used to define the context in which the application starts_
+_*RuntimeWiringConfigurer `@Bean` is used to define the context in which the application running_
