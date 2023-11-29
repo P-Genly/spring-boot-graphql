@@ -71,7 +71,7 @@ public class CustomNameDirective implements SchemaDirectiveWiring {
 ### Step 3 - Link you're code with GraphQL schema :
 This bean is mandatory to map you're directive behavior with you're graphQL schema when you run GraphQL requests :
 ```java
-@Bean
+    @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return builder ->  {
             builder.directive("customNameDirective", new CaseFormatDirective());
