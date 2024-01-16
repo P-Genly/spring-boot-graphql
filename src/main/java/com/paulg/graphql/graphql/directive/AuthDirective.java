@@ -1,7 +1,7 @@
 package com.paulg.graphql.graphql.directive;
 
 import com.netflix.graphql.dgs.DgsDirective;
-import com.paulg.graphql.service.AuthService;
+import com.paulg.graphql.service.ClientService;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetcherFactories;
 import graphql.schema.GraphQLFieldDefinition;
@@ -18,7 +18,7 @@ import static com.paulg.graphql.graphql.constant.Constant.AUTH;
 @RequiredArgsConstructor
 public class AuthDirective implements SchemaDirectiveWiring {
 
-    private final AuthService authService;
+    private final ClientService clientService;
 
     @Override
     public GraphQLFieldDefinition onField(SchemaDirectiveWiringEnvironment<GraphQLFieldDefinition> env) {
@@ -37,11 +37,11 @@ public class AuthDirective implements SchemaDirectiveWiring {
     }
 
     @Nullable
-    private Integer convertFieldValue(Object currentFieldValue) {
-        return checkAdminRole() ? (Integer) currentFieldValue : null;
+    private Long convertFieldValue(Object currentFieldValue) {
+        return checkAdminRole() ? (Long) currentFieldValue : null;
     }
 
     private boolean checkAdminRole() {
-        return authService.getAuthRole().equals(ADMIN);
+        return clientService.getRole().equals(ADMIN);
     }
 }
