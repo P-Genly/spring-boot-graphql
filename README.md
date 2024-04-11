@@ -57,7 +57,7 @@ public class CustomNameDirective implements SchemaDirectiveWiring {
         DataFetcher<?> dataFetcher = DataFetcherFactories.wrapDataFetcher(
                 originalDataFetcher,
                 (dataFetchingEnvironment, value) -> {
-                    // Implement you're behavior
+                    // Implement your behavior
                     ...
                 }
         );
