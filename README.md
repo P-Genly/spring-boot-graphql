@@ -24,8 +24,8 @@ spring.graphql.graphiql.path=/graphiql
 ### What is directives ?
 The directives is annotation to handle `GraphQL` data responses. You can define a custom directive to apply a specific behavior.
 
-### Step 1 - Create and apply you're directive :
-At first, you need to declare you're directives in `graphqls` file :
+### Step 1 - Create and apply your directives :
+At first, you need to declare your directives in `graphqls` file :
 ```graphqls
 directive @<customNameDirective>(<argument>: <type>!) on FIELD_DEFINITION
 ```
@@ -69,7 +69,7 @@ public class CustomNameDirective implements SchemaDirectiveWiring {
 ```
 
 ### Step 3 - Link your code with GraphQL schema :
-This bean is mandatory to map you're directive behavior with you're graphQL schema when you run GraphQL requests :
+This bean is mandatory to map your directive behavior with you're graphQL schema when you run GraphQL requests :
 ```java
     @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
